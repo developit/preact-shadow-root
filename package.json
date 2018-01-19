@@ -10,7 +10,8 @@
   "scripts": {
     "build": "microbundle",
     "prepare": "npm run -s build",
-    "test": "eslint src && npm run -s build"
+    "test": "eslint src && npm run -s build",
+    "release": "npm run -s prepare && npm test && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish"
   },
   "eslintConfig": {
     "extends": "eslint-config-developit"
