@@ -1,7 +1,7 @@
 {
   "name": "preact-shadow-root",
   "amdName": "Shadow",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Render a Preact subtree into the Shadow DOM.",
   "source": "preact-shadow-root.js",
   "main": "dist/preact-shadow-root.js",
