@@ -1,5 +1,7 @@
 # preact-shadow-root
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/developit/preact-shadow-root.svg)](https://greenkeeper.io/)
+
 A tiny `<Shadow>` component that renders its children into the Shadow DOM.
 
 🔥 [**JSFiddle Demo**](https://jsfiddle.net/developit/rw72nx24/)
