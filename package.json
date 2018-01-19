@@ -1,0 +1,38 @@
+{
+  "name": "preact-shadow-root",
+  "amdName": "Shadow",
+  "version": "1.0.0",
+  "description": "Render a Preact subtree into the Shadow DOM.",
+  "source": "preact-shadow-root.js",
+  "main": "dist/preact-shadow-root.js",
+  "module": "dist/preact-shadow-root.es.js",
+  "umd:main": "dist/preact-shadow-root.umd.js",
+  "scripts": {
+    "build": "microbundle",
+    "prepare": "npm run -s build",
+    "test": "eslint src && npm run -s build"
+  },
+  "eslintConfig": {
+    "extends": "eslint-config-developit"
+  },
+  "files": [
+    "preact-shadow-root.js",
+    "dist"
+  ],
+  "keywords": [
+    "preact",
+    "component",
+    "shadow root",
+    "shadow dom"
+  ],
+  "author": "Jason Miller <jason@developit.ca>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^4.6.1",
+    "eslint-config-developit": "^1.1.1",
+    "microbundle": "^0.3.1"
+  },
+  "peerDependencies": {
+    "preact": "*"
+  }
+}
