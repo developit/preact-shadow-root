@@ -10,11 +10,32 @@
   "scripts": {
     "build": "microbundle",
     "prepare": "npm run -s build",
-    "test": "eslint src && npm run -s build",
+    "test": "eslint src && jest",
     "release": "npm run -s prepare && npm test && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish"
   },
   "eslintConfig": {
-    "extends": "eslint-config-developit"
+    "extends": "eslint-config-developit",
+    "rules": {
+      "react/prefer-stateless-function": 0
+    }
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    }
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ],
+    "plugins": [
+      [
+        "transform-react-jsx",
+        {
+          "pragma": "h"
+        }
+      ]
+    ]
   },
   "files": [
     "preact-shadow-root.js",
@@ -29,9 +50,15 @@
   "author": "Jason Miller <jason@developit.ca>",
   "license": "MIT",
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-jest": "^22.1.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
     "eslint": "^4.6.1",
     "eslint-config-developit": "^1.1.1",
-    "microbundle": "^0.3.1"
+    "jest": "^22.1.4",
+    "microbundle": "^0.3.1",
+    "preact": "^8.2.7"
   },
   "peerDependencies": {
     "preact": "*"

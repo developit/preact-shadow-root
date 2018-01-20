@@ -13,8 +13,12 @@ export default class Shadow {
 			this.update(this.props);
 		}
 	}
-	update(props) {
-		render(props.children[0], this.shadow, this.shadow.firstChild);
+	componentWillUnmount() {
+		this.update(this.props, true);
+	}
+	update(props, unrender) {
+		let root = render(unrender ? null : props.children[0], this.shadow, this.shadow.firstChild);
+		if (unrender && root) root.remove();
 	}
 	render() {}
 }
