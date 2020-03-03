@@ -17,7 +17,14 @@ export default class Shadow {
 		this.update(this.props, true);
 	}
 	update(props, unrender) {
-		let root = render(unrender ? null : props.children[0], this.shadow, this.shadow.firstChild);
+		let child = props.children;
+		let replace;
+		// support Preact 8 and prior
+		if (child && child[0] && 'nodeName' in child[0]) {
+			child = child[0];
+			replace = this.shadow.firstChild;
+		}
+		let root = render(unrender ? null : child, this.shadow, replace);
 		if (unrender && root) root.remove();
 	}
 	render() {}
